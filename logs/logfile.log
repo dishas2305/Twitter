@@ -1,0 +1,134 @@
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 13:55:37"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 13:55:37"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"27-10-2022 13:56:43"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"27-10-2022 13:56:56"}
+{"level":"error","msg":"func_SignUp: Error :Invalid mobile number","time":"27-10-2022 13:57:06"}
+{"level":"error","msg":"func_SignUp: Error :Invalid mobile number","time":"27-10-2022 13:58:16"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 13:58:55"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"27-10-2022 13:58:55"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 13:59:05"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 13:59:05"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:05"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:05"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 13:59:44"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 13:59:44"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:44"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:44"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 13:59:53"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 13:59:53"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:53"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 13:59:53"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:00:31"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 14:00:31"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:00:31"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:00:31"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:02:07"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 14:02:07"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:02:07"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:02:07"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:02:45"}
+{"level":"error","msg":"func_CreateUser: Record found:mongo: no documents in result","time":"27-10-2022 14:02:45"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:03:29"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 14:03:29"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:03:29"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:03:29"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:03:39"}
+{"level":"error","msg":"func_GetUserByEmail: Error in mongo: no documents in result","time":"27-10-2022 14:03:39"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:03:39"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:03:39"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:05:07"}
+{"level":"error","msg":"func_CreateUser: Record found:mongo: no documents in result","time":"27-10-2022 14:05:07"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:07:34"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:07:34"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:07:34"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:07:41"}
+{"level":"error","msg":"func_SignUp: write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:07:41"}
+{"level":"error","msg":"func_CreateUser: Error in creating user:write exception: write errors: [E11000 duplicate key error collection: twitter.users index: _id_ dup key: { _id: ObjectId('000000000000000000000000') }]","time":"27-10-2022 14:07:41"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:08:43"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"27-10-2022 14:08:48"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:26:15"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:55:13"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 14:57:31"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"27-10-2022 15:10:18"}
+{"level":"error","msg":"validateFile: Error in PROFILE_PIC_SIZE_IN_KB env: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:38:20"}
+{"level":"error","msg":"func_ValidateImageFile: Error in IsValidFileSize: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:38:20"}
+{"level":"error","msg":"func_UploadProfilePic: Error in validate image file. Error: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:38:20"}
+{"level":"error","msg":"validateFile: Error in PROFILE_PIC_SIZE_IN_KB env: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:39:12"}
+{"level":"error","msg":"func_ValidateImageFile: Error in IsValidFileSize: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:39:12"}
+{"level":"error","msg":"func_UploadProfilePic: Error in validate image file. Error: strconv.ParseInt: parsing \"\": invalid syntax","time":"28-10-2022 09:39:12"}
+{"level":"error","msg":"GetImageDimension: Error in image DecodeConfig: image: unknown format","time":"28-10-2022 09:41:15"}
+{"level":"error","msg":"validateFile: Error in image DecodeConfig: image: unknown format","time":"28-10-2022 09:41:15"}
+{"level":"error","msg":"func_UploadProfilePic: Error in image decode: image: unknown format","time":"28-10-2022 09:41:15"}
+{"level":"error","msg":"func_UploadProfilePic: Error in upload profile. Error: image: unknown format","time":"28-10-2022 09:41:15"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"28-10-2022 09:41:26"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"28-10-2022 09:42:59"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"28-10-2022 09:44:28"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"28-10-2022 10:08:46"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"28-10-2022 10:14:24"}
+{"level":"error","msg":"func_encryption error: Error in cipher: message authentication failed","time":"28-10-2022 10:45:17"}
+{"level":"error","msg":"func_SetPassword: Record found:\u003cnil\u003e","time":"28-10-2022 11:20:22"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"28-10-2022 11:23:52"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: mongo: no documents in result","time":"28-10-2022 11:23:52"}
+{"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"28-10-2022 11:23:52"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"28-10-2022 11:25:57"}
+{"level":"error","msg":"Login: Error in login. Error: User does not exist with this credentials","time":"28-10-2022 11:25:57"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"28-10-2022 11:29:33"}
+{"level":"error","msg":"Login: Error in login. Error: User does not exist with this credentials","time":"28-10-2022 11:29:33"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 09:49:41"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 10:47:01"}
+{"level":"error","msg":"Login: Error in login. Error: User does not exist with this credentials","time":"31-10-2022 10:47:01"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 10:47:19"}
+{"level":"error","msg":"Login: Error in login. Error: User does not exist with this credentials","time":"31-10-2022 10:47:19"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 10:49:15"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 10:49:15"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 10:49:36"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 10:49:36"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"31-10-2022 10:59:05"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"31-10-2022 10:59:57"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"31-10-2022 10:59:59"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"31-10-2022 11:00:00"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 11:00:03"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 11:00:03"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"31-10-2022 11:02:26"}
+{"level":"error","msg":"func_PostTweet: cannot transform type models.TweetModel to a BSON Document: struct models.TweetModel has duplicated key _id","time":"31-10-2022 11:11:50"}
+{"level":"error","msg":"Post Tweet: Error in posting tweet:cannot transform type models.TweetModel to a BSON Document: struct models.TweetModel has duplicated key _id","time":"31-10-2022 11:11:50"}
+{"level":"error","msg":"func_PostTweet: cannot transform type models.TweetModel to a BSON Document: struct models.TweetModel has duplicated key _id","time":"31-10-2022 11:11:51"}
+{"level":"error","msg":"Post Tweet: Error in posting tweet:cannot transform type models.TweetModel to a BSON Document: struct models.TweetModel has duplicated key _id","time":"31-10-2022 11:11:51"}
+{"level":"error","msg":"Post Tweet: Error in binding. Error: code=400, message=Syntax error: offset=23, error=invalid character 'a' after object key:value pair, internal=invalid character 'a' after object key:value pair","time":"31-10-2022 11:12:39"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 11:21:49"}
+{"level":"error","msg":"func_GetTweets: Record found:mongo: no documents in result","time":"31-10-2022 11:21:49"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 11:22:14"}
+{"level":"error","msg":"func_GetTweets: Record found:mongo: no documents in result","time":"31-10-2022 11:22:14"}
+{"level":"error","msg":"func_Decoding tweet: Error in EOF","time":"31-10-2022 11:23:01"}
+{"level":"error","msg":"func_GetTweets: Record found:EOF","time":"31-10-2022 11:23:01"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 11:32:27"}
+{"level":"error","msg":"func_LikeTweet: Record found:mongo: no documents in result","time":"31-10-2022 11:32:27"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 11:33:31"}
+{"level":"error","msg":"func_LikeTweet: Record found:mongo: no documents in result","time":"31-10-2022 11:33:31"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 11:36:39"}
+{"level":"error","msg":"func_GetTweets: write exception: write errors: [Unknown modifier: $incr. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 11:44:44"}
+{"level":"error","msg":"func_LikeTweet: write exception: write errors: [Unknown modifier: $incr. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 11:44:44"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 11:58:43"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"31-10-2022 12:15:24"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:21:21"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"31-10-2022 12:22:03"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:22:08"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"31-10-2022 12:24:47"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:24:54"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:29:07"}
+{"level":"error","msg":"func_SetPassword: Record found:mongo: no documents in result","time":"31-10-2022 12:29:07"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:29:57"}
+{"level":"error","msg":"func_SetPassword: Record found:mongo: no documents in result","time":"31-10-2022 12:29:57"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:29:59"}
+{"level":"error","msg":"func_SetPassword: Record found:mongo: no documents in result","time":"31-10-2022 12:29:59"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 12:30:00"}
+{"level":"error","msg":"func_SetPassword: Record found:mongo: no documents in result","time":"31-10-2022 12:30:00"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 13:03:43"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 13:03:43"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 13:04:04"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 13:04:04"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 13:05:35"}
+{"level":"error","msg":"GetUserByMobileNumber: Error in fetching customer by mobile number. Error: mongo: no documents in result","time":"31-10-2022 13:05:35"}
+{"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"31-10-2022 13:05:35"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 13:08:09"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 13:08:09"}
