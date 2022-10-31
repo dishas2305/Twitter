@@ -265,16 +265,21 @@ func UpdateCustomer(c *models.UserModel, newFilename string) error {
 	return err
 }
 
-func Login(payload types.LoginBody) (types.LoginOutput, error) {
+func Login(password, username string) (types.LoginOutput, error) {
 	var loginOutput types.LoginOutput
-	user, err := GetUserByUserName(payload.UserName)
-	if err == nil {
+	user, err := GetUserByUserName(username)
+	if err != nil {
 		logger.Error("GetUserByMobileNumber: Error in fetching customer by mobile number. Error: ", err)
 		return loginOutput, err
 	}
-	reqPass := payload.Password
+	reqPass := password
+	fmt.Println("reqPass===>>", reqPass)
 	decPass, err := utils.Decrypt(user.Password, os.Getenv("PASSWORD_ENC_KEY"))
-	if reqPass == decPass {
+	fmt.Println("decPass===>", decPass)
+	if reqPass != decPass {
+		return loginOutput, config.ErrInvalidPassword
+
+	} else {
 		fmt.Println("password matches")
 		token, err := GenerateToken(user)
 		fmt.Println("token---------------------->", token)
@@ -301,8 +306,6 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 		loginOutput.Token = token
 		loginOutput.RefreshToken = rtoken
 		return loginOutput, nil
-	} else {
-		return loginOutput, config.ErrInvalidPassword
 	}
 }
 

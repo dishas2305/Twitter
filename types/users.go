@@ -26,8 +26,8 @@ type SetUserNameBody struct {
 }
 
 type LoginBody struct {
-	UserName string `json:"user_name" example:"Abc@1234"`
-	Password string `json:"password" example:"ANChf6378"`
+	UserName string `json:"user"`
+	Password string `json:"password"`
 }
 
 type LoginOutput struct {

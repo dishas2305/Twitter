@@ -175,18 +175,9 @@ func UploadProfilePic(c echo.Context) error {
 }
 
 func Login(c echo.Context) error {
-	body := &types.LoginBody{}
-	if err := c.Bind(body); err != nil {
-		logger.Error("Login: Error in binding. Error: ", err)
-		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrWrongPayload)
-	}
+	var loginbody types.LoginBody
 
-	if err := utils.ValidateStruct(body); err != nil {
-		logger.Error("Login: Error in validating request. Error: ", err)
-		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
-	}
-
-	result, err := services.Login(*body)
+	result, err := services.Login(loginbody.Password, loginbody.UserName)
 	if err != nil {
 		logger.Error("Login: Error in login. Error: ", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)

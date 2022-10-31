@@ -138,3 +138,34 @@
 {"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:00:51"}
 {"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 16:10:26"}
 {"level":"error","msg":"func_CommentTweet: Record found:mongo: no documents in result","time":"31-10-2022 16:10:26"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 16:42:54"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:42:54"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"31-10-2022 16:43:08"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"31-10-2022 16:43:11"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 16:44:48"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:44:48"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 16:47:51"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:47:51"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=json: Unmarshal(non-pointer types.LoginBody), internal=json: Unmarshal(non-pointer types.LoginBody)","time":"31-10-2022 16:50:16"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=json: Unmarshal(non-pointer types.LoginBody), internal=json: Unmarshal(non-pointer types.LoginBody)","time":"31-10-2022 16:53:58"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=json: Unmarshal(non-pointer types.LoginBody), internal=json: Unmarshal(non-pointer types.LoginBody)","time":"31-10-2022 16:54:42"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=json: Unmarshal(non-pointer types.LoginBody), internal=json: Unmarshal(non-pointer types.LoginBody)","time":"31-10-2022 16:56:18"}
+{"level":"error","msg":"Login: Error in binding. Error: code=400, message=json: Unmarshal(non-pointer types.LoginBody), internal=json: Unmarshal(non-pointer types.LoginBody)","time":"31-10-2022 16:59:12"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 17:00:07"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 17:00:07"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 17:02:46"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 17:02:46"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 17:04:53"}
+{"level":"error","msg":"Decrypt: Error in DecodeString. Error: illegal base64 data at input byte 3","time":"31-10-2022 17:04:53"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 17:04:53"}
+{"level":"error","msg":"Decrypt: Error in DecodeString. Error: illegal base64 data at input byte 3","time":"31-10-2022 17:08:32"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 17:08:32"}
+{"level":"error","msg":"Decrypt: Error in DecodeString. Error: illegal base64 data at input byte 3","time":"31-10-2022 17:08:33"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 17:08:33"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:17:00"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:17:05"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:22:39"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:22:45"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:22:52"}
+{"level":"error","msg":"func_Unfollow: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 17:22:52"}
+{"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 17:22:52"}

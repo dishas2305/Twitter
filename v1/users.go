@@ -16,5 +16,5 @@ func UsersGroup(e *echo.Group) {
 	e.POST("/login", controllers.Login)
 	e.POST("/follow/:follower_id", controllers.Follow, middleware.ValidateCustomerToken)
 	e.POST("/unfollow/:follower_id", controllers.Unfollow, middleware.ValidateCustomerToken)
-	e.GET("my-followers/:twitter_user_id", controllers.MyFollowers)
+	e.GET("/my-followers/:twitter_user_id", controllers.MyFollowers, middleware.ValidateCustomerToken)
 }
