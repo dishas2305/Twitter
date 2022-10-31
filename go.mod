@@ -15,7 +15,10 @@ require (
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d
 )
 
-require github.com/jmespath/go-jmespath v0.4.0 // indirect
+require (
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
+	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
+)
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible

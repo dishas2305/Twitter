@@ -7,6 +7,8 @@ import (
 )
 
 func CommentsGroup(e *echo.Group) {
-	e.POST("/comment", controllers.Comment)
+	e.POST("/comment/:tweetid", controllers.Comment)
+	e.GET("/like-comment/:tweetid", controllers.LikeComment)
+	e.GET("/uncomment/:commentid", controllers.Uncomment)
 
 }

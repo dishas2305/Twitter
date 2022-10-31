@@ -132,3 +132,9 @@
 {"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"31-10-2022 13:05:35"}
 {"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 13:08:09"}
 {"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 13:08:09"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 16:00:37"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:00:37"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"31-10-2022 16:00:51"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"31-10-2022 16:00:51"}
+{"level":"error","msg":"func_GetTweetByID: Error in mongo: no documents in result","time":"31-10-2022 16:10:26"}
+{"level":"error","msg":"func_CommentTweet: Record found:mongo: no documents in result","time":"31-10-2022 16:10:26"}

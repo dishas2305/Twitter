@@ -275,12 +275,15 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 	reqPass := payload.Password
 	decPass, err := utils.Decrypt(user.Password, os.Getenv("PASSWORD_ENC_KEY"))
 	if reqPass == decPass {
+		fmt.Println("password matches")
 		token, err := GenerateToken(user)
+		fmt.Println("token---------------------->", token)
 		if err != nil {
 			logger.Error("GenerateToken: Error in generating the token Error: ", err)
 			return loginOutput, err
 		}
 		rtoken, err := GenerateRefreshToken(user)
+		fmt.Println("refersh token-------------------------->", rtoken)
 		if err != nil {
 			logger.Error("GenerateToken: Error in generating the refresh token Error: ", err)
 			return loginOutput, err
@@ -289,13 +292,14 @@ func Login(payload types.LoginBody) (types.LoginOutput, error) {
 		filter := bson.M{
 			"_id": user.ID,
 		}
-		update := bson.M{"$set": bson.M{"refersh_token": rtoken}}
+		update := bson.M{"$set": bson.M{"refresh_token": rtoken}}
 		_, err = mdb.Collection(models.UsersCollections).UpdateOne(context.TODO(), filter, update)
 		if err != nil {
-			logger.Error("func_SetUsername: ", err)
+			logger.Error("func_Login: ", err)
 			return loginOutput, err
 		}
 		loginOutput.Token = token
+		loginOutput.RefreshToken = rtoken
 		return loginOutput, nil
 	} else {
 		return loginOutput, config.ErrInvalidPassword
@@ -324,20 +328,77 @@ func GenerateRefreshToken(userResult models.UserModel) (string, error) {
 	return refershToken, err
 }
 
-// func Follow(payload string) error {
-// 	mdb := storage.MONGO_DB
-// 	filter := bson.M{
-// 		"ID": payload.ID,
-// 	}
-// 	update := bson.M{
-// 		"$inc": bson.M{
-// 			"followers": 1,
-// 		},
-// 	}
-// 	_, err := mdb.Collection(models.UsersCollections).UpdateOne(context.TODO(), filter, update)
-// 	if err != nil {
-// 		logger.Error("func_SetUsername: ", err)
-// 		return err
-// 	}
-// 	return err
-// }
+func Follow(myid, yourid string) error {
+	mdb := storage.MONGO_DB
+	_, err := mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
+		"_id": yourid,
+	}, bson.D{
+		{"$inc", bson.D{{"followers", 1}}},
+	}, options.Update().SetUpsert(true))
+	if err != nil {
+		logger.Error("func_GetTweets: ", err)
+		return err
+	}
+
+	_, err = mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
+		"_id": myid,
+	}, bson.D{
+		{"$inc", bson.D{{"following", 1}}},
+	}, options.Update().SetUpsert(true))
+	if err != nil {
+		logger.Error("func_GetTweets: ", err)
+		return err
+	}
+
+	um := models.FollowerModel{}
+	um.UserId = yourid
+	um.FollowerID = myid
+	_, err = mdb.Collection(models.FollowersCollections).InsertOne(context.TODO(), um)
+	if err != nil {
+		logger.Error("func_SignUp: ", err)
+		return err
+	}
+	return nil
+}
+
+func Unfollow(myid, yourid string) error {
+	mdb := storage.MONGO_DB
+	_, err := mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
+		"_id": yourid,
+	}, bson.D{
+		{"$dec", bson.D{{"followers", 1}}},
+	}, options.Update().SetUpsert(true))
+	if err != nil {
+		logger.Error("func_Unfollow: ", err)
+		return err
+	}
+
+	_, err = mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
+		"_id": myid,
+	}, bson.D{
+		{"$dec", bson.D{{"following", 1}}},
+	}, options.Update().SetUpsert(true))
+	if err != nil {
+		logger.Error("func_Unfollow: ", err)
+		return err
+	}
+	return nil
+}
+
+func MyFollowers(id string) ([]models.FollowerModel, error) {
+	var followers []models.FollowerModel
+	mdb := storage.MONGO_DB
+	filter := bson.M{
+		"user_id": id,
+	}
+	result, err := mdb.Collection(models.FollowersCollections).Find(context.TODO(), filter)
+	if err != nil {
+		logger.Error("func_GetFollowers: ", err)
+		return followers, err
+	}
+	if err := result.All(context.Background(), &followers); err != nil {
+		logger.Error("func_GetFollowers: error cur.All() step ", err)
+		return nil, err
+	}
+	return followers, nil
+}

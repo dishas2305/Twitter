@@ -195,19 +195,56 @@ func Login(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
 }
 
-// func Follow(c echo.Context) error {
-// 	followerId := c.Request().Header.Get("ID")
-// 	_, err := services.GetUserByID(followerId)
-// 	if err != nil {
-// 		logger.Error("func_Follow: Record found:", err)
-// 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
-// 	}
-// 	var followBody types.FollowBody
-// 	_, err = services.GetUserByID(followBody.ID)
-// 	if err != nil {
-// 		logger.Error("func_follow: Record found:", err)
-// 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
-// 	}
-// 	services.Follow(followBody.ID)
+func Follow(c echo.Context) error {
+	followerid := c.Param("follower_id")
+	_, err := services.GetUserByID(followerid)
+	if err != nil {
+		logger.Error("func_Follow: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	var followBody types.FollowBody
+	_, err = services.GetUserByID(followBody.ID)
+	if err != nil {
+		logger.Error("func_follow: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	err = services.Follow(followerid, followBody.ID)
+	if err != nil {
+		logger.Error("Login: Error in follow. Error: ", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgFollowing)
 
-// }
+}
+
+func Unfollow(c echo.Context) error {
+	followerid := c.Param("follower_id")
+	_, err := services.GetUserByID(followerid)
+	if err != nil {
+		logger.Error("func_Follow: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	var followBody types.FollowBody
+	_, err = services.GetUserByID(followBody.ID)
+	if err != nil {
+		logger.Error("func_follow: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	err = services.Unfollow(followerid, followBody.ID)
+	if err != nil {
+		logger.Error("Login: Error in unfollow. Error: ", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgUnfollow)
+
+}
+
+func MyFollowers(c echo.Context) error {
+	twitteruserid := c.Param("twitter_user_id")
+	result, err := services.MyFollowers(twitteruserid)
+	if err != nil {
+		logger.Error("Get Followers: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, result)
+}

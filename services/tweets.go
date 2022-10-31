@@ -8,11 +8,10 @@ import (
 
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func GetTweetByID(Id primitive.ObjectID) (models.TweetModel, error) {
+func GetTweetByID(Id string) (models.TweetModel, error) {
 	var tweet models.TweetModel
 	mdb := storage.MONGO_DB
 	filter := bson.M{
@@ -21,7 +20,7 @@ func GetTweetByID(Id primitive.ObjectID) (models.TweetModel, error) {
 
 	result := mdb.Collection(models.TweetsCollections).FindOne(context.TODO(), filter)
 	err := result.Decode(&tweet)
-	if err != nil {
+	if err == nil {
 		logger.Error("func_GetTweetByID: Error in ", err)
 		return tweet, err
 	}
@@ -74,5 +73,15 @@ func LikeTweet(id string) error {
 		return err
 	}
 
+	return nil
+}
+
+func DeleteTweet(id string) error {
+	mdb := storage.MONGO_DB
+	_, err := mdb.Collection("tweets").DeleteOne(context.TODO(), bson.M{"_id": "id"})
+	if err != nil {
+		logger.Error("func_DeleteTweet: ", err)
+		return err
+	}
 	return nil
 }

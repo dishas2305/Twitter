@@ -60,3 +60,13 @@ func LikeTweet(c echo.Context) error {
 	}
 	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgTweetLiked)
 }
+
+func DeleteTweet(c echo.Context) error {
+	tweetid := c.Param("tweet_id")
+	err := services.DeleteTweet(tweetid)
+	if err != nil {
+		logger.Error("func_DeleteTweet: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgTweetDeleted)
+}

@@ -15,6 +15,11 @@ const (
 	MsgPostTweet       = "Post tweeted sucessfully"
 	MsgTweetLiked      = "Tweet liked"
 	MsgCommentPosted   = "Comment posted sucessfully"
+	MsgCommentLiked    = "Comment liked sucessfully"
+	MsgCommentDeleted  = "Comment Deleted sucessfully"
+	MsgTweetDeleted    = "Tweet deleted sucessfully"
+	MsgFollowing       = "Followed sucessfully"
+	MsgUnfollow        = "Sucessfully unfollowed"
 )
 
 var (

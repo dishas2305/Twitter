@@ -17,7 +17,7 @@ type UserModel struct {
 	ProfilePicture string             `bson:"profile" json:"profile"`
 	UserName       string             `bson:"handle" json:"handle"`
 	IsVerified     bool               `bson:"is_verified" json:"is_verified"`
-	RefreshToken   string             `bson:"refresh_token" json:"refreshToken"`
+	RefreshToken   string             `bson:"refresh_token" json:"refresh_token"`
 	Followers      int                `bson:"followers" json:"followers"`
 	Following      int                `bson:"following" json:"following"`
 }

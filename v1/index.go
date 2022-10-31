@@ -12,6 +12,6 @@ func InitializeRoutes(e *echo.Group) {
 	gTweets := e.Group("/tweets")
 	TweetsGroup(gTweets)
 
-	gComments := e.Group("/CommentsGroup")
+	gComments := e.Group("/comments")
 	CommentsGroup(gComments)
 }
