@@ -169,3 +169,5 @@
 {"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"31-10-2022 17:22:52"}
 {"level":"error","msg":"func_Unfollow: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 17:22:52"}
 {"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 17:22:52"}
+{"level":"error","msg":"Error on deleting twwet\u003cnil\u003e","time":"31-10-2022 17:40:28"}
+{"level":"error","msg":"Error on deleting twwet\u003cnil\u003e","time":"31-10-2022 17:47:35"}

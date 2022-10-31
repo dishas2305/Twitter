@@ -9,6 +9,7 @@ import (
 
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -43,9 +44,12 @@ func LikeComment(id string) error {
 
 func Uncomment(id string) error {
 	mdb := storage.MONGO_DB
-	_, err := mdb.Collection("commments").DeleteOne(context.TODO(), bson.M{"_id": "id"})
-	if err != nil {
-		logger.Error("func_GetTweets: ", err)
+	collection := mdb.Collection("comments")
+	idPrimitive, err := primitive.ObjectIDFromHex(id)
+
+	deleteResult, err := collection.DeleteOne(context.TODO(), bson.M{"_id": idPrimitive})
+	if deleteResult.DeletedCount == 0 {
+		logger.Error("Error on deleting twwet", err)
 		return err
 	}
 	return nil
