@@ -38,7 +38,7 @@ func main() {
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
-		AllowMethods: []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
+		AllowMethods: []string{echo.GET, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 
 	storage.ConnectLogrus() // log file

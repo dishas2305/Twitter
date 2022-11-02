@@ -15,14 +15,14 @@ import (
 func Comment(c echo.Context) error {
 	tweetID := c.Param("tweetid")
 	userID := c.Request().Header.Get("userID")
-	var comment types.CommentBody
-	fmt.Println(comment)
+	var Comment types.CommentBody
+	fmt.Println(Comment)
 	_, err := services.GetTweetByID(tweetID)
 	if err != nil {
 		logger.Error("func_CommentTweet: Record found:", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrTweetDoesNotExist), config.ErrTweetDoesNotExist)
 	}
-	err = services.Comment(tweetID, userID, comment.Comment)
+	err = services.Comment(tweetID, userID, Comment.Comment)
 	if err != nil {
 		logger.Error("func_CommentTweet: ", err)
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)

@@ -20,6 +20,7 @@ const (
 	MsgTweetDeleted    = "Tweet deleted sucessfully"
 	MsgFollowing       = "Followed sucessfully"
 	MsgUnfollow        = "Sucessfully unfollowed"
+	MsgLogOut          = "Logged out successfully"
 )
 
 var (

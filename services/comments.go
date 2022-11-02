@@ -30,8 +30,9 @@ func Comment(tweet, user, comment string) error {
 func LikeComment(id string) error {
 	fmt.Println("inside services")
 	mdb := storage.MONGO_DB
-	_, err := mdb.Collection("comments").UpdateOne(context.TODO(), bson.M{
-		"_id": id,
+	commentid, err := primitive.ObjectIDFromHex(id)
+	_, err = mdb.Collection("comments").UpdateOne(context.TODO(), bson.M{
+		"_id": commentid,
 	}, bson.D{
 		{"$inc", bson.D{{"likes", 1}}},
 	}, options.Update().SetUpsert(true))
@@ -53,5 +54,4 @@ func Uncomment(id string) error {
 		return err
 	}
 	return nil
-
 }

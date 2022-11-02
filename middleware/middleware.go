@@ -42,7 +42,7 @@ func ExtractCustomerTokenID(c echo.Context) (string, error) {
 
 	fmt.Println("token:", token)
 	claims, ok := token.Claims.(jwt.MapClaims)
-	result, _ := fmt.Println("claims----->>>", claims["phone"])
+	result := fmt.Sprintln("claims----->>>", claims["user_id"])
 	fmt.Println(result)
 	fmt.Println("token", token.Valid)
 	if ok && token.Valid {
@@ -51,7 +51,7 @@ func ExtractCustomerTokenID(c echo.Context) (string, error) {
 	}
 
 	filter := bson.M{
-		"userId": result,
+		"_id": result,
 	}
 	valid := mdb.Collection(models.UsersCollections).FindOne(context.TODO(), filter)
 

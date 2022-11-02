@@ -64,11 +64,24 @@ func GetTweets(id string) ([]models.TweetModel, error) {
 
 func LikeTweet(id string) error {
 	mdb := storage.MONGO_DB
-	_, err := mdb.Collection("tweets").UpdateOne(context.TODO(), bson.M{
-		"_id": id,
+	tweetid, err := primitive.ObjectIDFromHex(id)
+	// _, err := mdb.Collection("tweets").UpdateOne(context.TODO(), (bson.M{"_id": id}),
+	// 	bson.M{"$inc": bson.M{"likes": 1}})
+	_, err = mdb.Collection("tweets").UpdateOne(context.TODO(), bson.M{
+		"_id": tweetid,
 	}, bson.D{
 		{"$inc", bson.D{{"likes", 1}}},
 	}, options.Update().SetUpsert(true))
+	// filter := bson.M{
+	// 	"_id": id,
+	// }
+	// update := bson.M{"$set": bson.M{"$inc": bson.M{"likes": 1}}}
+
+	// _, err = mdb.Collection(models.TweetsCollections).UpdateOne(context.TODO(), filter, update)
+	// if err != nil {
+	// 	return err
+	// }
+
 	if err != nil {
 		logger.Error("func_GetTweets: ", err)
 		return err

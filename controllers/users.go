@@ -11,6 +11,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	logger "github.com/sirupsen/logrus"
+	//"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func SignUp(c echo.Context) error {
@@ -174,10 +175,32 @@ func UploadProfilePic(c echo.Context) error {
 	return utils.HttpSuccessResponse(c, http.StatusOK, "")
 }
 
-func Login(c echo.Context) error {
-	var loginbody types.LoginBody
+// func Login(c echo.Context) error {
+// 	var loginbody types.LoginBody
+// 	password := loginbody.Password
+// 	username := loginbody.UserName
+// 	result, err := services.Login(password, username)
+// 	if err != nil {
+// 		logger.Error("Login: Error in login. Error: ", err)
+// 		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
+// 	}
 
-	result, err := services.Login(loginbody.Password, loginbody.UserName)
+// 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
+// }
+
+func Login(c echo.Context) error {
+	body := &types.LoginBody{}
+	if err := c.Bind(body); err != nil {
+		logger.Error("Login: Error in binding. Error: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, config.ErrWrongPayload)
+	}
+
+	if err := utils.ValidateStruct(body); err != nil {
+		logger.Error("Login: Error in validating request. Error: ", err)
+		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
+	}
+
+	result, err := services.Login(*body)
 	if err != nil {
 		logger.Error("Login: Error in login. Error: ", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
@@ -187,21 +210,23 @@ func Login(c echo.Context) error {
 }
 
 func Follow(c echo.Context) error {
+	id := c.Request().Header.Get("Id")
 	followerid := c.Param("follower_id")
+	fmt.Println(followerid)
 	_, err := services.GetUserByID(followerid)
 	if err != nil {
 		logger.Error("func_Follow: Record found:", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
 	}
-	var followBody types.FollowBody
-	_, err = services.GetUserByID(followBody.ID)
+
+	_, err = services.GetUserByID(id)
 	if err != nil {
 		logger.Error("func_follow: Record found:", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
 	}
-	err = services.Follow(followerid, followBody.ID)
+	err = services.Follow(followerid, id)
 	if err != nil {
-		logger.Error("Login: Error in follow. Error: ", err)
+		logger.Error("Follow: Error in follow. Error: ", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(err), err)
 	}
 	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgFollowing)
@@ -238,4 +263,14 @@ func MyFollowers(c echo.Context) error {
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
 	}
 	return utils.HttpSuccessResponse(c, http.StatusOK, result)
+}
+
+func LogOut(c echo.Context) error {
+	twitteruserid := c.Param("twitter_user_id")
+	err := services.LogOut(twitteruserid)
+	if err != nil {
+		logger.Error("LogOut: Record found:", err)
+		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrUserDoesNotExist), config.ErrUserDoesNotExist)
+	}
+	return utils.HttpSuccessResponse(c, http.StatusOK, config.MsgLogOut)
 }

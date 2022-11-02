@@ -18,6 +18,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
@@ -76,7 +77,7 @@ func GetUserByUserName(username string) (models.UserModel, error) {
 	mdb := storage.MONGO_DB
 
 	filter := bson.M{
-		"user_name": username,
+		"handle": username,
 	}
 
 	result := mdb.Collection(models.UsersCollections).FindOne(context.TODO(), filter)
@@ -254,7 +255,7 @@ func UploadProfilePic(user *models.UserModel, file *multipart.FileHeader, imgWid
 func UpdateCustomer(c *models.UserModel, newFilename string) error {
 	mdb := storage.MONGO_DB
 	filter := bson.M{
-		"ID": c.ID,
+		"_id": c.ID,
 	}
 	update := bson.M{"$set": bson.M{"profile": newFilename}}
 	_, err := mdb.Collection(models.UsersCollections).UpdateOne(context.TODO(), filter, update)
@@ -265,28 +266,69 @@ func UpdateCustomer(c *models.UserModel, newFilename string) error {
 	return err
 }
 
-func Login(password, username string) (types.LoginOutput, error) {
+// func Login(password, username string) (types.LoginOutput, error) {
+// 	var loginOutput types.LoginOutput
+// 	user, err := GetUserByUserName(username)
+// 	if err != nil {
+// 		logger.Error("GetUserByMobileNumber: Error in fetching customer by mobile number. Error: ", err)
+// 		return loginOutput, err
+// 	}
+// 	reqPass := password
+// 	fmt.Println("reqPass===>>", reqPass)
+// 	decPass, err := utils.Decrypt(user.Password, os.Getenv("PASSWORD_ENC_KEY"))
+// 	fmt.Println("decPass===>", decPass)
+// 	if reqPass != decPass {
+// 		return loginOutput, config.ErrInvalidPassword
+
+// 	} else {
+// 		fmt.Println("password matches")
+// 		token, err := GenerateToken(user)
+// 		fmt.Println("token---------------------->", token)
+// 		if err != nil {
+// 			logger.Error("GenerateToken: Error in generating the token Error: ", err)
+// 			return loginOutput, err
+// 		}
+// 		rtoken, err := GenerateRefreshToken(user)
+// 		fmt.Println("refersh token-------------------------->", rtoken)
+// 		if err != nil {
+// 			logger.Error("GenerateToken: Error in generating the refresh token Error: ", err)
+// 			return loginOutput, err
+// 		}
+// 		mdb := storage.MONGO_DB
+// 		filter := bson.M{
+// 			"_id": user.ID,
+// 		}
+// 		update := bson.M{"$set": bson.M{"refresh_token": rtoken}}
+// 		_, err = mdb.Collection(models.UsersCollections).UpdateOne(context.TODO(), filter, update)
+// 		if err != nil {
+// 			logger.Error("func_Login: ", err)
+// 			return loginOutput, err
+// 		}
+// 		loginOutput.Token = token
+// 		loginOutput.RefreshToken = rtoken
+// 		return loginOutput, nil
+// 	}
+// }
+
+func Login(payload types.LoginBody) (types.LoginOutput, error) {
 	var loginOutput types.LoginOutput
-	user, err := GetUserByUserName(username)
+	user, err := GetUserByUserName(payload.UserName)
 	if err != nil {
-		logger.Error("GetUserByMobileNumber: Error in fetching customer by mobile number. Error: ", err)
+		logger.Error("GetUserByUseranme: Error in fetching customer by mobile number. Error: ", err)
 		return loginOutput, err
 	}
-	reqPass := password
-	fmt.Println("reqPass===>>", reqPass)
-	decPass, err := utils.Decrypt(user.Password, os.Getenv("PASSWORD_ENC_KEY"))
-	fmt.Println("decPass===>", decPass)
-	if reqPass != decPass {
-		return loginOutput, config.ErrInvalidPassword
-
-	} else {
-		fmt.Println("password matches")
+	//reqMPin := payload.Password
+	fmt.Println(payload.Password)
+	fmt.Println(user.Password)
+	encMPin, err := utils.Decrypt(user.Password, os.Getenv("PASSWORD_ENC_KEY"))
+	fmt.Println(encMPin)
+	if payload.Password != encMPin {
 		token, err := GenerateToken(user)
-		fmt.Println("token---------------------->", token)
 		if err != nil {
 			logger.Error("GenerateToken: Error in generating the token Error: ", err)
 			return loginOutput, err
 		}
+		loginOutput.Token = token
 		rtoken, err := GenerateRefreshToken(user)
 		fmt.Println("refersh token-------------------------->", rtoken)
 		if err != nil {
@@ -306,7 +348,11 @@ func Login(password, username string) (types.LoginOutput, error) {
 		loginOutput.Token = token
 		loginOutput.RefreshToken = rtoken
 		return loginOutput, nil
+
+	} else {
+		return loginOutput, config.ErrInvalidPassword
 	}
+
 }
 
 func GenerateToken(userResult models.UserModel) (string, error) {
@@ -332,9 +378,13 @@ func GenerateRefreshToken(userResult models.UserModel) (string, error) {
 }
 
 func Follow(myid, yourid string) error {
+	fmt.Println(yourid)
+	fmt.Println(myid)
 	mdb := storage.MONGO_DB
-	_, err := mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
-		"_id": yourid,
+	myidstring, err := primitive.ObjectIDFromHex(myid)
+	youridstring, err := primitive.ObjectIDFromHex(yourid)
+	_, err = mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
+		"_id": youridstring,
 	}, bson.D{
 		{"$inc", bson.D{{"followers", 1}}},
 	}, options.Update().SetUpsert(true))
@@ -344,7 +394,7 @@ func Follow(myid, yourid string) error {
 	}
 
 	_, err = mdb.Collection("users").UpdateOne(context.TODO(), bson.M{
-		"_id": myid,
+		"_id": myidstring,
 	}, bson.D{
 		{"$inc", bson.D{{"following", 1}}},
 	}, options.Update().SetUpsert(true))
@@ -404,4 +454,19 @@ func MyFollowers(id string) ([]models.FollowerModel, error) {
 		return nil, err
 	}
 	return followers, nil
+}
+
+func LogOut(id string) error {
+	mdb := storage.MONGO_DB
+	hex_id, err := primitive.ObjectIDFromHex(id)
+	filter := bson.M{
+		"_id": hex_id,
+	}
+	update := bson.M{"$set": bson.M{"refresh_token": bson.TypeNull.String()}}
+
+	_, err = mdb.Collection(models.UsersCollections).UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		return err
+	}
+	return nil
 }

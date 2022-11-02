@@ -13,8 +13,7 @@ type TweetModel struct {
 	UserID   string             `bson:"user_id,omitempty" json:"user_id"`
 	HashTag  string             `bson:"hashtag" json:"hashtag"`
 	Tweet    string             `bson:"tweet,omitempty" json:"tweet,omitempty"`
-	Picture  string             `bson:"picture,omitempty" json:"picture,omitempty"`
-	Likes    int32              `bson:"likes" json:"likes"`
+	Likes    int32              `bson:"likes,omitempty" json:"likes,omitempty"`
 	PostedAt time.Time          `bson:"posted_at" json:"posted_at"`
 	Comments string             `bson:"comments,omitempty" json:"comments,omitempty"`
 }

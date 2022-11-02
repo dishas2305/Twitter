@@ -36,5 +36,5 @@ type LoginOutput struct {
 }
 
 type FollowBody struct {
-	ID string `json:"Id" example:"123456789"`
+	ID string `json:"_id" example:"63620b1d8ad240520f3c3ae3"`
 }

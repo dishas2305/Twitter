@@ -14,7 +14,8 @@ func UsersGroup(e *echo.Group) {
 	e.PUT("/upload-profile-pic", controllers.UploadProfilePic)
 	e.POST("/set-username", controllers.SetUserName)
 	e.POST("/login", controllers.Login)
-	e.POST("/follow/:follower_id", controllers.Follow, middleware.ValidateCustomerToken)
+	e.PUT("/follow/:follower_id", controllers.Follow, middleware.ValidateCustomerToken)
 	e.POST("/unfollow/:follower_id", controllers.Unfollow, middleware.ValidateCustomerToken)
 	e.GET("/my-followers/:twitter_user_id", controllers.MyFollowers, middleware.ValidateCustomerToken)
+	e.PATCH("/logout/:twitter_user_id", controllers.LogOut, middleware.ValidateCustomerToken)
 }

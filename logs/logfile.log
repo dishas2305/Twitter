@@ -171,3 +171,62 @@
 {"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"31-10-2022 17:22:52"}
 {"level":"error","msg":"Error on deleting twwet\u003cnil\u003e","time":"31-10-2022 17:40:28"}
 {"level":"error","msg":"Error on deleting twwet\u003cnil\u003e","time":"31-10-2022 17:47:35"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"02-11-2022 08:38:03"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 08:38:13"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 08:56:01"}
+{"level":"error","msg":"GetUserByUseranme: Error in fetching customer by mobile number. Error: mongo: no documents in result","time":"02-11-2022 08:56:01"}
+{"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"02-11-2022 08:56:01"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:01:16"}
+{"level":"error","msg":"Login: Error in login. Error: User does not exist with this credentials","time":"02-11-2022 09:01:16"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:03:39"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:03:39"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:05:28"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:05:28"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:06:49"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:06:49"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:08:47"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:08:47"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:11:51"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:11:51"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 09:13:04"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:13:04"}
+{"level":"error","msg":"GetUserByUseranme: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"02-11-2022 09:14:14"}
+{"level":"error","msg":"GetUserByUseranme: Error in fetching customer by mobile number. Error: \u003cnil\u003e","time":"02-11-2022 09:14:25"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:15:43"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:15:49"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:17:32"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:18:55"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:19:12"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:19:14"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:20:48"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:21:32"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:23:35"}
+{"level":"error","msg":"Login: Error in login. Error: Invalid Password","time":"02-11-2022 09:26:02"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:29:33"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:30:54"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:36:11"}
+{"level":"error","msg":"func_Unfollow: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:36:11"}
+{"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:36:11"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:43:51"}
+{"level":"error","msg":"func_Unfollow: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:43:51"}
+{"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:43:51"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:46:09"}
+{"level":"error","msg":"func_Unfollow: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:46:09"}
+{"level":"error","msg":"Login: Error in unfollow. Error: write exception: write errors: [Unknown modifier: $dec. Expected a valid update modifier or pipeline-style update specified as an array]","time":"02-11-2022 09:46:09"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in \u003cnil\u003e","time":"02-11-2022 09:46:24"}
+{"level":"error","msg":"Error on deleting twwet\u003cnil\u003e","time":"02-11-2022 10:25:45"}
+{"level":"error","msg":"func_GetTweetByID: Error in \u003cnil\u003e","time":"02-11-2022 10:26:18"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 11:43:27"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 11:44:22"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 11:45:57"}
+{"level":"error","msg":"func_User not found: Error in mongo: no documents in result","time":"02-11-2022 11:46:10"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 11:47:10"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 11:54:38"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 12:36:07"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 12:37:15"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 12:44:05"}
+{"level":"error","msg":"func_GetUserByUseranme: Error in mongo: no documents in result","time":"02-11-2022 12:44:56"}
+{"level":"error","msg":"GetUserByUseranme: Error in fetching customer by mobile number. Error: mongo: no documents in result","time":"02-11-2022 12:44:56"}
+{"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"02-11-2022 12:44:56"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 12:52:35"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 12:53:13"}
