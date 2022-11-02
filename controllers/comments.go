@@ -1,11 +1,9 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 	"twitter/config"
 	"twitter/services"
-	"twitter/types"
 	"twitter/utils"
 
 	"github.com/labstack/echo/v4"
@@ -14,15 +12,13 @@ import (
 
 func Comment(c echo.Context) error {
 	tweetID := c.Param("tweetid")
-	userID := c.Request().Header.Get("userID")
-	var Comment types.CommentBody
-	fmt.Println(Comment)
+	userID := c.Request().Header.Get("UserID")
 	_, err := services.GetTweetByID(tweetID)
 	if err != nil {
 		logger.Error("func_CommentTweet: Record found:", err)
 		return utils.HttpErrorResponse(c, utils.GetStatusCode(config.ErrTweetDoesNotExist), config.ErrTweetDoesNotExist)
 	}
-	err = services.Comment(tweetID, userID, Comment.Comment)
+	err = services.Comment(tweetID, userID)
 	if err != nil {
 		logger.Error("func_CommentTweet: ", err)
 		return utils.HttpErrorResponse(c, http.StatusBadRequest, err)
@@ -32,7 +28,6 @@ func Comment(c echo.Context) error {
 }
 
 func LikeComment(c echo.Context) error {
-	fmt.Println("inside controllers")
 	tweetId := c.Param("tweetid")
 	_, err := services.GetTweetByID(tweetId)
 	if err != nil {

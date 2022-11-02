@@ -6,6 +6,7 @@ import (
 
 	"twitter/models"
 	"twitter/storage"
+	"twitter/types"
 
 	logger "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
@@ -13,9 +14,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func Comment(tweet, user, comment string) error {
+func Comment(tweet, user string) error {
+	var CommentBody types.CommentBody
 	cm := models.CommentModel{}
-	cm.Comments = comment
+	cm.Comments = CommentBody.Comment
 	cm.TweetID = tweet
 	cm.UserID = user
 	mdb := storage.MONGO_DB

@@ -230,3 +230,6 @@
 {"level":"error","msg":"Login: Error in login. Error: mongo: no documents in result","time":"02-11-2022 12:44:56"}
 {"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 12:52:35"}
 {"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 12:53:13"}
+{"level":"error","msg":"func_GetUserByMobileNUmber: Error in mongo: no documents in result","time":"02-11-2022 14:10:12"}
+{"level":"error","msg":"func_CreateUser: Record found:\u003cnil\u003e","time":"02-11-2022 14:10:27"}
+{"level":"info","msg":"profileEnvWidth: 375profileEnvHeight: 450","time":"02-11-2022 14:12:18"}

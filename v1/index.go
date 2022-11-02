@@ -5,6 +5,8 @@ import (
 )
 
 func InitializeRoutes(e *echo.Group) {
+	gHome := e.Group("/home")
+	HomeGroup(gHome)
 
 	gUsers := e.Group("/users")
 	UsersGroup(gUsers)
